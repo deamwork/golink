@@ -1,12 +1,23 @@
 @import "lib/global";
 
 .links {
-    width: 800px;
-    margin: 0 auto;
+    font-family: monospace;
+    font-size: 30px;
+    font-weight: 100;
+    width: auto;
+    margin: auto 2em;
 
     a {
         color: #09f;
         text-decoration: none;
+
+        &.delete {
+            color: #f00;
+        }
+
+        &.edit {
+            color: #06f;
+        }
 
         &:hover {
             opacity: 0.6;
@@ -14,7 +25,8 @@
     }
 
     .full-url {
-        color: #ddd;
+        color: #aaa;
+        font-size: 22px;
         text-shadow: 1px 1px 0 #fff;
     }
 }

@@ -17,7 +17,7 @@ ALL: web/bindata.go
 .build/assets/%.js: web/assets/%.ts
 	$(eval TMP := $(shell mktemp))
 	tsc --out $(TMP) $< 
-	closure-compiler --js $(TMP) --js_output_file $@
+	google-closure-compiler --js $(TMP) --js_output_file $@
 	rm -f $(TMP)
 
 .build/assets/%: web/assets/%
@@ -28,3 +28,7 @@ web/bindata.go: .build/bin/go-bindata .build/assets $(DST)
 
 clean:
 	rm -rf .build/assets web/bindata.go
+
+build/binary:
+	cd src/cmd/go
+	go build -mod=vendor -o /usr/bin/go

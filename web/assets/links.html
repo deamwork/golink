@@ -14,11 +14,24 @@
         <ul>
             {{ range $key, $route := . }}
             <li>
-                <a href="{{ $route.URL }}">go/{{ $key }}</a><br />
+                <a href="{{ $route.URL }}">go/{{ $key }}</a>
+                    | <a class="edit" href="/edit/{{ $key }}">Edit</a>
+                    | <a class="delete" href="javascript:;" onclick='callDelete("{{ $key }}")'>Delete</a><br />
                 <a href="{{ $route.URL }}" class="full-url">{{ $route.URL }}</a>
             </li>
             {{ end }}
         </ul>
     </div>
+
+    <script>
+        var callDelete = function(id) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("DELETE", "/api/url/" + id, true);
+            xhr.send();
+            setTimeout(()=>{
+                window.location.reload();
+            }, 500);
+        }
+    </script>
 </body>
 </html>
