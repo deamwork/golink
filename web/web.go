@@ -12,8 +12,8 @@ import (
 
 	"github.com/spf13/viper"
 
-	"github.com/kellegous/go/backend"
-	"github.com/kellegous/go/internal"
+	"github.com/deamwork/golink/backend"
+	"github.com/deamwork/golink/internal"
 )
 
 // Serve a bundled asset over HTTP.

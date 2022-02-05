@@ -1,4 +1,4 @@
-module github.com/kellegous/go
+module github.com/deamwork/golink
 
 go 1.13
 
@@ -10,6 +10,7 @@ require (
 	github.com/spf13/viper v1.5.0
 	github.com/syndtr/goleveldb v1.0.0
 	golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
+	golang.org/x/tools v0.1.9 // indirect
 	google.golang.org/api v0.14.0
 	google.golang.org/grpc v1.21.0
 )
